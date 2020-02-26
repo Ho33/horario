@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SCHEDULE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-row>
+    <ion-col>
+        Hours
+    </ion-col>
+    <ion-col *ngFor="let day of pipeDays">
+        <ion-label>
+          {{ day | days}}
+        </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let hours of pipeHours;let i = index">
+    <ion-col >
+        <ion-label>
+          {{ hours | hours}}
+        </ion-label>
+    </ion-col>
+    <ion-col *ngFor="let item of subjects">
+        <ion-label (click)="presentToast(item.completo)">
+          {{item.dNombre}}
+        </ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
