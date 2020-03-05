@@ -1,0 +1,7 @@
+{
+  "name": "horarioAgain",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

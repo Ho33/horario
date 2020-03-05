@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SCHEDULE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col> Hora </ion-col>
+      <ion-col *ngFor="let dia of pipeDays;"> {{ dia | days }} </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let schedule of schedule.getQuadrant(); let i=index;">
+      <ion-col>{{ i | hours }}</ion-col>
+      <ion-col *ngFor="let subject of schedule;" style="color: beige;" (click)="presentToast(subject.completo)">
+        {{subject.dName)}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
