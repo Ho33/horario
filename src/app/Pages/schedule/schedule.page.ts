@@ -21,20 +21,12 @@ export class SchedulePage implements OnInit {
 
 	ngOnInit() {
 		this.schedule = this.route.getCurrentNavigation().extras.state.schedule;
-		console.log(this.schedule);
 	}
 
-	async toastName(materia: HoursOfSubjects) {
-		await this.presentToast(materia);
-	}
-
-	async presentToast(subject) {
-		let message = '';
-		subject.forEach((data) => {
-			message = message + ' ' + data.completo + '\n';
-		});
+	async presentToast(nameComplete) {
+		
 		const toast = await this.toast.create({
-			message: message,
+			message: nameComplete,
 			duration: 1500,
 			color: 'blue'
 		});

@@ -11,6 +11,4 @@ export class HoursOfSubjects {
 	public setSubjects(subjects: string[]) {
 		this.subjects = subjects;
 	}
-
-
 }
